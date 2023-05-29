@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">GrowFood</string>
+    <string name="daftar">Daftar</string>
+    <string name="masuk">Masuk</string>
+    <string name="email">Email</string>
+    <string name="cth">Cth : growfood@gmail.com</string>
+    <string name="password">Password</string>
+    <string name="cthpass">Masukkan password</string>
+    <string name="ataumasuk">atau masuk dengan</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="selanjutnya">Selanjutnya</string>
+    <string name="daftar_span">Belum punya akun? Daftar</string>
+    <string name="cbSK">Dengan mendaftar, Anda menyetujui Syarat &amp; Ketentuan dan Kebijakan Privasi</string>
+    <string name="masuk_span">Sudah mempunyai akun? Masuk</string>
+
+
+
+
 </resources>

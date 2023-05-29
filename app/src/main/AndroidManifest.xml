@@ -11,8 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Growfood.Starting"
         tools:targetApi="31">
+
         <activity
-            android:name=".MainActivity"
+            android:name=".RegisterActivity"
+            android:theme="@style/Theme.GrowFood"
+            android:exported="false"></activity>
+
+        <activity
+            android:name=".LoginActivity"
             android:theme="@style/Theme.GrowFood"
             android:exported="true">
             <intent-filter>
