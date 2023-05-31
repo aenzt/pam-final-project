@@ -9,6 +9,7 @@ android {
     compileSdk 33
 
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.example.growfood"
         minSdk 29
         targetSdk 33
