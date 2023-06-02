@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">GrowFood</string>
+
+    <string-array name="thread_descriptions">
+        <item>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        </item>
+        <item>wow sangat keren, aku tidak tahu</item>
+        <item>wow sangat keren, aku tidak tahu</item>
+        <item>wow sangat keren, aku tidak tahu</item>
+        <item>wow sangat keren, aku tidak tahu</item>
+    </string-array>
+
+    <string-array name="thread_like_counts">
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="thread_reply_counts">
+        <item>10 replies</item>
+        <item>10 replies</item>
+        <item>10 replies</item>
+        <item>10 replies</item>
+        <item>10 replies</item>
+    </string-array>
+
+    <string-array name="thread_times">
+        <item>Kemarin, 12.48</item>
+        <item>Kemarin, 12.48</item>
+        <item>Kemarin, 12.48</item>
+        <item>Kemarin, 12.48</item>
+        <item>Kemarin, 12.48</item>
+    </string-array>
 </resources>

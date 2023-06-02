@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Growfood.Starting"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".CommunityActivity"
             android:theme="@style/Theme.GrowFood"
             android:exported="true">
             <intent-filter>
@@ -20,6 +20,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailThreadActivity"
+            android:theme="@style/Theme.GrowFood">
+
+        </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 
