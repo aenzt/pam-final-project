@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:labelFor="@+id/EmailET"
+        android:labelFor="@+id/et_email"
         android:fontFamily="@font/manrope_medium"
         android:textColor="#101828"
         android:layout_marginStart="16dp"
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/masuk" />
 
     <EditText
-        android:id="@+id/EmailET"
+        android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -88,17 +88,17 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="#101828"
-        android:labelFor="@+id/passwordET"
+        android:labelFor="@+id/et_password"
         android:fontFamily="@font/manrope_medium"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:text="@string/password"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EmailET" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
 
     <EditText
-        android:id="@+id/passwordET"
+        android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -129,7 +129,7 @@
         android:background="@drawable/buttonactive"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordET"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
         />
 
     <TextView
