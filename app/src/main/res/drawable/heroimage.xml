@@ -1,0 +1,52 @@
+<!-- drawable/heroimage.xml -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="398dp"
+    android:height="295dp"
+    android:viewportWidth="398"
+    android:viewportHeight="295"
+    >
+    <group>
+        <clip-path
+            android:pathData="M15 0H383C391.284 0 398 6.71573 398 15V280C398 288.284 391.284 295 383 295H15C6.71573 295 0 288.284 0 280V15C0 6.71573 6.71573 0 15 0Z"
+            />
+        <group
+            android:translateX="0.508"
+            android:translateY="-0.859"
+            android:pivotX="199"
+            android:pivotY="147.5"
+            android:scaleX="2.681"
+            android:scaleY="3.928"
+            android:rotation="45.274"
+            >
+            <path
+                android:pathData="M0 0V295H398V0"
+                >
+                <aapt:attr name="android:fillColor">
+                    <gradient
+                        android:type="linear"
+                        android:fillAlpha="0.6"
+                        android:startX="99.5"
+                        android:startY="147.5"
+                        android:endX="298.5"
+                        android:endY="147.5"
+                        >
+                        <item
+                            android:color="#C8EDFF"
+                            android:offset="0"
+                            />
+                        <item
+                            android:color="#3EAB80"
+                            android:offset="0.784"
+                            />
+                        <item
+                            android:color="#099250"
+                            android:offset="1"
+                            />
+                    </gradient>
+                </aapt:attr>
+            </path>
+        </group>
+    </group>
+</vector>
