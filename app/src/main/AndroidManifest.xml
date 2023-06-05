@@ -17,12 +17,16 @@
             android:theme="@style/Theme.GrowFood"
             android:exported="false" />
         <activity
+            android:name=".HomeActivity"
+            android:theme="@style/Theme.GrowFood"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.GrowFood"
             android:exported="false" />
 
         <activity
-            android:name=".HomeActivity"
+            android:name=".ProfileActivity"
             android:theme="@style/Theme.GrowFood"
             android:exported="true">
             <intent-filter>
