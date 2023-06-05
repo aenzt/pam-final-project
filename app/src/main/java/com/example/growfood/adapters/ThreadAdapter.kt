@@ -33,8 +33,8 @@ class ThreadAdapter(private val context: Context, articleList: ArrayList<ThreadM
         holder.tvDescription.text = thread.description
         holder.tvLikeCounts.text = thread.likeCounts
         holder.tvTime.text = thread.time
-        holder.tvReplies.text = thread.replies
-        holder.imgProfile.setImageResource(thread.images)
+        holder.tvReplies.text = thread.replies.size.toString()
+        holder.imgProfile.setImageResource(thread.person.imgProfile)
 
         holder.threadLayout.setOnClickListener { v: View? ->
             val intent = Intent(this.context, DetailThreadActivity::class.java)

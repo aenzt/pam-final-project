@@ -4,14 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.growfood.adapters.ThreadAdapter
+import com.example.growfood.models.PersonModel
 import com.example.growfood.models.ThreadModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -66,16 +65,19 @@ class CommunityActivity: AppCompatActivity() {
     private fun assignThreadModel(){
         val descriptions: Array<String> = resources.getStringArray(R.array.thread_descriptions)
         val likeCounts: Array<String> = resources.getStringArray(R.array.thread_like_counts)
-        val replies: Array<String> = resources.getStringArray(R.array.thread_reply_counts)
+        val replies: ArrayList<String> = arrayListOf("good article", "bad article")
         val times: Array<String> = resources.getStringArray(R.array.thread_times)
+        val imageLists = arrayListOf("https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80")
+        val person = PersonModel("Rijal", R.drawable.ic_launcher_background)
 
         for(element in descriptions.indices) {
             threadModels.add(ThreadModel(
                 descriptions[element],
                 times[element],
                 likeCounts[element],
-                replies[element],
-                R.drawable.ic_launcher_background)
+                replies,
+                imageLists,
+                person)
             )
         }
     }
