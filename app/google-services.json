@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "647919888120",
+    "project_id": "growfood-44504",
+    "storage_bucket": "growfood-44504.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647919888120:android:802120ed91ca7afa5f7d0d",
+        "android_client_info": {
+          "package_name": "com.example.growfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647919888120-1d3nvh74vfu2r4crhd59una8vhsne2er.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpkbzOf9CYTHLMPdLb9ObaTdBTl66qVzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647919888120-1d3nvh74vfu2r4crhd59una8vhsne2er.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
