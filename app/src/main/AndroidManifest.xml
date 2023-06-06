@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -27,18 +28,19 @@
             android:name=".HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.GrowFood" />
+<!--        <activity-->
+<!--            android:name=".LoginActivity"-->
+<!--            android:name=".HomeActivity"-->
+<!--            android:theme="@style/Theme.GrowFood"-->
+<!--            android:exported="false" />-->
+        <!-- kebalik bro -->
         <activity
-            android:name=".LoginActivity"
-            android:name=".HomeActivity"
-            android:theme="@style/Theme.GrowFood"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
+            android:name=".ProfileActivity"
             android:theme="@style/Theme.GrowFood"
             android:exported="false" />
 
         <activity
-            android:name=".ProfileActivity"
+            android:name=".LoginActivity"
             android:theme="@style/Theme.GrowFood"
             android:exported="true">
             <intent-filter>

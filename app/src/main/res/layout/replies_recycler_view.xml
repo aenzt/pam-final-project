@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="20dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/thread_layout"
+        android:id="@+id/replies_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +39,7 @@
                     <ImageView
                         android:id="@+id/thread_avatar"
                         android:layout_width="60dp"
+                        android:src="@drawable/ic_account_circle"
                         android:layout_height="60dp"
                         tools:srcCompat="@tools:sample/avatars" />
                 </androidx.cardview.widget.CardView>
@@ -45,103 +47,48 @@
                 <LinearLayout
                     android:id="@+id/thread_title_container"
                     android:layout_width="229dp"
-                    android:layout_height="128dp"
+                    android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="20dp"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/thread_title"
-                        android:fontFamily="@font/manrope_bold"
+                        android:id="@+id/person_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/manrope_bold"
                         android:layout_marginLeft="10dp"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/thread_time"
+                        android:id="@+id/replies_time"
                         android:fontFamily="@font/manrope_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
+                        android:textSize="15dp"
                         android:text="TextView" />
 
                 </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="1dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/ic_search" />
-
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/thread_description"
-        android:fontFamily="@font/manrope_bold"
+        android:id="@+id/replies_description"
         android:layout_width="388dp"
+        android:fontFamily="@font/manrope_bold"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:text="TextView"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thread_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/replies_layout" />
 
-    <ImageView
-        android:id="@+id/thread_images"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/roundedbutton"
-        app:layout_constraintTop_toBottomOf="@+id/thread_description"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="20dp"
-        tools:layout_editor_absoluteX="0dp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/thread_images">
-
-        <Button
-            android:id="@+id/thread_like_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:radius="10dp"
-            android:text="20"
-            android:textSize="20sp"
-            android:drawableLeft="@drawable/ic_favorite_outline"
-            android:textColor="#F04438"
-            android:paddingLeft="10dp"
-            android:backgroundTint="#FECDCA"
-            android:drawableTint="#F04438"
-            android:background="@drawable/roundedbutton"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            app:backgroundTint="#FECDCA"
-            />
-
-        <TextView
-            android:id="@+id/thread_replies_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="20 balasan"
-            android:textSize="20sp"
-            android:layout_marginStart="8dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            />
-    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
