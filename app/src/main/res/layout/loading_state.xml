@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:indeterminate="true"
         android:indeterminateTintMode="src_atop"
-        android:indeterminateTint="@color/purple_500"
+        android:indeterminateTint="@color/green_500"
         android:minWidth="50dp"
         android:maxWidth="50dp"
         android:minHeight="50dp"

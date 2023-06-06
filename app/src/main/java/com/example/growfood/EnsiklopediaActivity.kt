@@ -14,6 +14,7 @@ import com.example.growfood.recyclerview.DiseaseAdapter
 import com.example.growfood.recyclerview.PlantAdapter
 import com.example.growfood.recyclerview.ProductAdapter
 import com.example.modul10.Helper.LoadingState
+import com.google.android.material.navigation.NavigationBarView
 import io.github.cdimascio.dotenv.Dotenv
 import io.github.cdimascio.dotenv.dotenv
 import retrofit2.Call
@@ -38,7 +39,6 @@ class EnsiklopediaActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen()
         binding = ActivityEnsiklopediaBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -58,6 +58,31 @@ class EnsiklopediaActivity : AppCompatActivity() {
             startActivity(Intent(this@EnsiklopediaActivity, DiseaseListActivity::class.java))
         }
 
+        binding.bottomNav.selectedItemId = R.id.item_ensiklopedia
+
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId){
+                R.id.item_beranda -> {
+                    startActivity(Intent(this, HomeActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    true
+                }
+                R.id.item_ensiklopedia -> {
+                    true
+                }
+                R.id.item_forum -> {
+                    startActivity(Intent(this, CommunityActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    true
+                }
+                R.id.item_profil -> {
+                    startActivity(Intent(this, Profile::class.java))
+                    overridePendingTransition(0, 0)
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     private fun addProductData(){

@@ -16,14 +16,19 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.growfood.databinding.LoginactivityBinding
+import com.example.modul10.Helper.LoadingState
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: LoginactivityBinding
     private lateinit var userAuth: FirebaseAuth
+    private lateinit var loadingState: LoadingState
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
+        loadingState = LoadingState(this@LoginActivity)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.loginactivity)
         binding = LoginactivityBinding.inflate(layoutInflater)
@@ -99,11 +104,14 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginToServer(email: String, pass: String) {
+        loadingState.show()
         userAuth.signInWithEmailAndPassword(email, pass)
             .addOnSuccessListener {
+                loadingState.dismiss()
                 startActivity(Intent(this, HomeActivity::class.java))
             }
             .addOnFailureListener {
+                loadingState.dismiss()
                 Toast.makeText(this,  "${it.message.toString()}", Toast.LENGTH_SHORT).show()
             }
     }

@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.growfood.adapters.ThreadAdapter
+import com.example.growfood.databinding.CommunityActivityBinding
 import com.example.growfood.models.ThreadModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.database.ValueEventListener
 
 class CommunityActivity: AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
@@ -20,10 +22,39 @@ class CommunityActivity: AppCompatActivity() {
     private var mAuth: FirebaseAuth? = null
     private var firebaseDatabase: FirebaseDatabase? = null
     private var databaseReference: DatabaseReference? = null
+    private lateinit var binding : CommunityActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.community_activity)
+        binding = CommunityActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.bottomNav.selectedItemId = R.id.item_forum
+
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId){
+                R.id.item_beranda -> {
+                    startActivity(Intent(this, HomeActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    true
+                }
+                R.id.item_ensiklopedia -> {
+                    startActivity(Intent(this, EnsiklopediaActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    true
+                }
+                R.id.item_forum -> {
+                    true
+                }
+                R.id.item_profil -> {
+                    startActivity(Intent(this, Profile::class.java))
+                    overridePendingTransition(0, 0)
+                    true
+                }
+                else -> false
+            }
+        }
+
         mAuth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase!!.getReference("threads")

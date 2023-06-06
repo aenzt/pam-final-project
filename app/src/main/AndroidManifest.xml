@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,32 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Growfood.Starting"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Profile"
+            android:exported="false"
+            android:theme="@style/Theme.GrowFood"
+            />
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/Theme.GrowFood"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:theme="@style/Theme.GrowFood"
-            android:exported="false" />
-
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false"
-            android:theme="@style/Theme.GrowFood"
-            />
-        <activity
-            android:name=".DiseaseListActivity"
-            android:exported="false"
-            android:theme="@style/Theme.GrowFood"
-            />
-        <activity
-            android:name=".PlantListActivity"
             android:exported="false"
             android:theme="@style/Theme.GrowFood" />
         <activity
-            android:name=".EnsiklopediaActivity"
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GrowFood" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,17 +37,33 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".DiseaseListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GrowFood" />
+        <activity
+            android:name=".PlantListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GrowFood" />
+        <activity
+            android:name=".EnsiklopediaActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GrowFood" />
+        <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.GrowFood" />
         <activity
             android:name=".CommunityActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.GrowFood" />
         <activity
             android:name=".DetailThreadActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.GrowFood" />
         <activity
             android:name=".UpdateDeleteThread"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.GrowFood" />
     </application>
 
 </manifest>

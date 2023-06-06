@@ -21,6 +21,7 @@ import com.example.growfood.databinding.LoginactivityBinding
 import com.example.growfood.databinding.RegisterActivityBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: RegisterActivityBinding
@@ -88,8 +89,13 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun createUserAuth(name: String, email: String, pass: String) {
         auth.createUserWithEmailAndPassword(email, pass)
-            .addOnSuccessListener {
-                startActivity(Intent(this, HomeActivity::class.java))
+            .addOnSuccessListener {result ->
+                val profileUpdates = userProfileChangeRequest {
+                    displayName = name
+                }
+                result.user?.updateProfile(profileUpdates)?.addOnCompleteListener {
+                    startActivity(Intent(this, HomeActivity::class.java))
+                }
             }
             .addOnFailureListener {  exception ->
                 Log.d("RegisterActivity", exception.message.toString())
