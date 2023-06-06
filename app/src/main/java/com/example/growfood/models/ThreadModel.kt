@@ -5,7 +5,7 @@ class ThreadModel {
     var key: String = ""
     var time: String = ""
     var likeCounts: String = ""
-    var replies: ArrayList<Replies> = arrayListOf(Replies())
+    var replies: ArrayList<Replies> = arrayListOf()
     var images: ArrayList<String> = arrayListOf("")
     var person: PersonModel = PersonModel("", "", 0)
 

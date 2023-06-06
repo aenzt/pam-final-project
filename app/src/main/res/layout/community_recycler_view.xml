@@ -100,17 +100,16 @@
         android:id="@+id/thread_images"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/roundedbutton"
         app:layout_constraintTop_toBottomOf="@+id/thread_description"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="20dp"
         tools:layout_editor_absoluteX="0dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/thread_images">

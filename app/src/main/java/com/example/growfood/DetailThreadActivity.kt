@@ -21,6 +21,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class DetailThreadActivity: AppCompatActivity() {
     lateinit var iv_profile: ImageView
@@ -38,7 +39,7 @@ class DetailThreadActivity: AppCompatActivity() {
 
     private val PICK_IMAGE_REQUEST = 1
 
-    private lateinit var downloadedImageUri: String
+    private var downloadedImageUri: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail_thread_activity)
@@ -92,7 +93,7 @@ class DetailThreadActivity: AppCompatActivity() {
             val description = et_description.text.toString()
             val images = arrayListOf(downloadedImageUri)
             val person = PersonModel(mAuth?.currentUser?.uid!!, mAuth?.currentUser?.displayName!!, R.drawable.ic_launcher_background)
-            val replies = arrayListOf(Replies())
+            val replies: ArrayList<Replies> = arrayListOf()
 
             thread = ThreadModel(description, formattedDate, "0", replies, images, person)
 

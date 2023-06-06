@@ -79,11 +79,12 @@
 
     <TextView
         android:id="@+id/replies_description"
-        android:layout_width="388dp"
+        android:layout_width="wrap_content"
         android:fontFamily="@font/manrope_bold"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textSize="15sp"
+        android:paddingLeft="10dp"
+        android:textSize="20sp"
         android:text="TextView"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
