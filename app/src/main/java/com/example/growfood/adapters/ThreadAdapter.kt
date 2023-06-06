@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.growfood.DetailThreadActivity
 import com.example.growfood.R
+import com.example.growfood.UpdateDeleteThread
 import com.example.growfood.models.ThreadModel
 
 class ThreadAdapter(private val context: Context, articleList: ArrayList<ThreadModel>): RecyclerView.Adapter<ThreadAdapter.ArticleViewHolder>() {
@@ -36,13 +37,16 @@ class ThreadAdapter(private val context: Context, articleList: ArrayList<ThreadM
         holder.tvReplies.text = thread.replies.size.toString()
         holder.imgProfile.setImageResource(thread.person.imgProfile)
 
+
         holder.threadLayout.setOnClickListener { v: View? ->
-            val intent = Intent(this.context, DetailThreadActivity::class.java)
+            val intent = Intent(this.context, UpdateDeleteThread::class.java)
+            intent.putExtra("thread_key", thread.key)
             intent.putExtra("thread_description", thread.description)
             intent.putExtra("thread_like_counts", thread.likeCounts)
             intent.putExtra("thread_time", thread.time)
             intent.putExtra("thread_reply_counts", thread.replies)
             intent.putExtra("thread_img_profile", thread.images)
+            intent.putExtra("thread_person_id", thread.person.id)
 
             context.startActivity(intent)
         }
