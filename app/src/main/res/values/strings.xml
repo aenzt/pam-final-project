@@ -13,10 +13,17 @@
     <string name="daftar_span">Belum punya akun? Daftar</string>
     <string name="cbSK">Dengan mendaftar, Anda menyetujui Syarat &amp; Ketentuan dan Kebijakan Privasi</string>
     <string name="masuk_span">Sudah mempunyai akun? Masuk</string>
-    <string name="user_placeholder_greetings">Halo, Zauhair!</string>
+    <string name="user_placeholder_greetings">Halo, Raihan Parama!</string>
     <string name="user_placeholder_location">Malang, Jawa Timur</string>
     <string name="lihat_selengkapnya">lihat selengkapnya</string>
     <string name="lihat_semua">lihat semua</string>
-
-
+    <string name="silahkan_isi_nama_anda">Silahkan isi nama anda</string>
+    <string name="silahkan_isi_email_anda">Silahkan isi email anda</string>
+    <string name="silahkan_gunakan_email_yang_valid">Silahkan gunakan email yang valid</string>
+    <string name="silahkan_isi_kata_sandi_anda">Silahkan isi kata sandi anda</string>
+    <string name="silahkan_isi_kata_sandi_minimal_8_karakter">Silahkan isi kata sandi minimal 8 karakter</string>
+    <string name="silahkan_isi_konfirmasi_kata_sandi">Silahkan isi konfirmasi kata sandi</string>
+    <string name="silahkan_isi_konfirmasi_kata_sandi_minimal_8_karakter">Silahkan isi konfirmasi kata sandi minimal 8 karakter</string>
+    <string name="kata_sandi_dan_konfirmasi_tidak_sama">Kata sandi dan Konfirmasi tidak sama</string>
+    <string name="register">Register</string>
 </resources>

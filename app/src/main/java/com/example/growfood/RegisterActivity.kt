@@ -11,14 +11,28 @@ import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
+import android.util.Log
+import android.util.Patterns
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.example.growfood.databinding.LoginactivityBinding
+import com.example.growfood.databinding.RegisterActivityBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 
 class RegisterActivity : AppCompatActivity() {
+    private lateinit var binding: RegisterActivityBinding
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register_activity)
+        binding = RegisterActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        auth = FirebaseAuth.getInstance()
 
         val textView: TextView = findViewById(R.id.sudah_punya_akun)
         val text = getString(R.string.masuk_span)
@@ -54,7 +68,71 @@ class RegisterActivity : AppCompatActivity() {
         textView.movementMethod = LinkMovementMethod.getInstance() // Mengaktifkan aksi klik pada teks yang diklik
         textView.highlightColor = Color.TRANSPARENT
 
+        onAction()
 
+    }
+
+    private fun onAction() {
+        binding.apply {
+            btnRegister.setOnClickListener {
+                val name = etName.text.toString().trim()
+                val email = etEmail.text.toString().trim()
+                val pass = etPassword.text.toString().trim()
+
+                if (checkValidation(name, email, pass)) {
+                    hideSoftKeyboard(this@RegisterActivity, binding.root)
+                    createUserAuth(name, email, pass)
+                }
+            }
+        }
+    }
+
+    private fun createUserAuth(name: String, email: String, pass: String) {
+        auth.createUserWithEmailAndPassword(email, pass)
+            .addOnSuccessListener {result ->
+                val profileUpdates = userProfileChangeRequest {
+                    displayName = name
+                }
+                result.user?.updateProfile(profileUpdates)?.addOnCompleteListener {
+                    startActivity(Intent(this, HomeActivity::class.java))
+                }
+            }
+            .addOnFailureListener {  exception ->
+                Log.d("RegisterActivity", exception.message.toString())
+            }
+    }
+
+    private fun checkValidation(
+        name: String,
+        email: String,
+        pass: String,
+    ): Boolean {
+        binding.apply {
+            when{
+                name.isEmpty() -> {
+                    etName.error = getString(R.string.silahkan_isi_nama_anda)
+                    etName.requestFocus()
+                }
+                email.isEmpty() -> {
+                    etEmail.error = getString(R.string.silahkan_isi_email_anda)
+                    etEmail.requestFocus()
+                }
+                !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                    etEmail.error = getString(R.string.silahkan_gunakan_email_yang_valid)
+                    etEmail.requestFocus()
+                }
+                pass.isEmpty() -> {
+                    etPassword.error = getString(R.string.silahkan_isi_kata_sandi_anda)
+                    etPassword.requestFocus()
+                }
+                pass.length < 8 -> {
+                    etPassword.error = getString(R.string.silahkan_isi_kata_sandi_minimal_8_karakter)
+                    etPassword.requestFocus()
+                }
+                else -> return true
+            }
+        }
+        return false
     }
 
 
