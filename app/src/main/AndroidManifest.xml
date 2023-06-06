@@ -50,6 +50,15 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <activity
+            android:name=".CommunityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailThreadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateDeleteThread"
+            android:exported="false" />
     </application>
 
 </manifest>
