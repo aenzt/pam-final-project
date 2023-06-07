@@ -34,7 +34,7 @@
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Diskusi"
+            android:text="Tambah Diskusi"
             android:textColor="@color/white"
             android:textFontWeight="800"
             android:textSize="20dp" />
@@ -105,5 +105,21 @@
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/detail_thread_avatar"
         tools:layout_editor_absoluteX="20dp" />
+
+    <ImageView
+        android:id="@+id/cameraButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_camera"
+        android:tint="#3CCB7F"
+        android:background="@drawable/add_image_button"
+        android:scaleType="center"
+        android:padding="16dp"
+        android:contentDescription="Camera Button"
+        app:layout_constraintTop_toBottomOf="@id/et_description"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
