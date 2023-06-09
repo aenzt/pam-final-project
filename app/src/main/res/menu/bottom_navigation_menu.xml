@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_beranda"
+        android:enabled="true"
+        android:icon="@drawable/home_24"
+        android:title="Beranda"/>
+    <item
+        android:id="@+id/item_ensiklopedia"
+        android:enabled="true"
+        android:icon="@drawable/library_books_24"
+        android:title="Ensiklopedia"/>
+    <item
+        android:id="@+id/item_forum"
+        android:enabled="true"
+        android:icon="@drawable/groups_24"
+        android:title="Forum"/>
+    <item
+        android:id="@+id/item_profil"
+        android:enabled="true"
+        android:icon="@drawable/person_24"
+        android:title="Profil"/>
+</menu>

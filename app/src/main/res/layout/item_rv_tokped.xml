@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="125dp"
+        android:layout_height="220dp"
+        android:background="@drawable/bg_weather"
+        android:outlineProvider="background"
+        android:clipToOutline="true"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:elevation="4dp"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+        <ImageView
+            android:id="@+id/img_product"
+            android:layout_width="123dp"
+            android:layout_gravity="center"
+            android:layout_height="123dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/placeholder"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tv_name_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:text="Fungisida Antracol 70WP 250 gram"
+                />
+            <TextView
+                android:id="@+id/tv_price_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rp 45.000"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/pro_tokped"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:id="@+id/tv_location_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4sp"
+                    android:layout_marginBottom="2sp"
+                    android:text="Malang"
+                    android:textSize="11sp"
+                    android:layout_gravity="center_vertical"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/star"
+                    />
+                <TextView
+                    android:id="@+id/tv_rating_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="5.0 | Terjual 500+"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
