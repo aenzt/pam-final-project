@@ -85,6 +85,17 @@ class EnsiklopediaActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.bottomNav.selectedItemId = R.id.item_ensiklopedia
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(0, 0)
+        finish()
+    }
+
     private fun addProductData(){
         productData.add(Product("Fungisida Antracol 70WP 250 gram", "42.000", "/uploads/image_33_6f53ab4c85.png", "5.0", "Surabaya"))
         productData.add(Product("Pupuk Organik EM4 1 Liter", "21.500", "/uploads/image_34_e9a9cf0726.png", "4.8", "Malang"))

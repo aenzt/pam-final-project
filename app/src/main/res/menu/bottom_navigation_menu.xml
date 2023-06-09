@@ -16,11 +16,6 @@
         android:icon="@drawable/groups_24"
         android:title="Forum"/>
     <item
-        android:id="@+id/item_tanamanku"
-        android:enabled="true"
-        android:icon="@drawable/icon_tanaman"
-        android:title="Tanamanku"/>
-    <item
         android:id="@+id/item_profil"
         android:enabled="true"
         android:icon="@drawable/person_24"

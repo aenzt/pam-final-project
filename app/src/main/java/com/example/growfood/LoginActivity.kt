@@ -40,6 +40,10 @@ class LoginActivity : AppCompatActivity() {
         val spannableString = SpannableString(text)
 
         userAuth = FirebaseAuth.getInstance()
+
+        if (userAuth.currentUser != null){
+            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+        }
         onAction()
 
         val clickableSpan = object : ClickableSpan() {

@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav"
         app:layout_constraintTop_toTopOf="parent"
+        android:paddingBottom="32dp"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -101,16 +102,6 @@
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
-
-                <TextView
-                    android:id="@+id/lihatselengkapnyaACT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="125dp"
-                    android:fontFamily="@font/manrope_regular"
-                    android:text="Edit Profil"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
             </LinearLayout>
 
             <TextView

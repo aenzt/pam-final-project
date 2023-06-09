@@ -28,20 +28,8 @@
             android:name=".HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.GrowFood" />
-<!--        <activity-->
-<!--            android:name=".LoginActivity"-->
-<!--            android:name=".HomeActivity"-->
-<!--            android:theme="@style/Theme.GrowFood"-->
-<!--            android:exported="false" />-->
-        <!-- kebalik bro -->
-        <activity
-            android:name=".ProfileActivity"
-            android:theme="@style/Theme.GrowFood"
-            android:exported="false" />
-
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.GrowFood"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

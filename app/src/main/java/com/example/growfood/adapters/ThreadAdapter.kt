@@ -99,6 +99,7 @@ class ThreadAdapter(private val context: Context, articleList: ArrayList<ThreadM
     }
 
     init {
+        articleList.reverse()
         this.articleList = articleList
     }
 }

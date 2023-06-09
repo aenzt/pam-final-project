@@ -18,6 +18,11 @@ class Profile : AppCompatActivity() {
 
         binding.bottomNav.selectedItemId = R.id.item_profil
 
+        binding.keluarTV.setOnClickListener {
+            mAuth!!.signOut()
+            startActivity(Intent(this@Profile, LoginActivity::class.java))
+        }
+
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId){
                 R.id.item_beranda-> {
@@ -43,5 +48,16 @@ class Profile : AppCompatActivity() {
         }
 
         binding.halo.text = mAuth!!.currentUser?.displayName
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.bottomNav.selectedItemId = R.id.item_profil
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(0, 0)
+        finish()
     }
 }

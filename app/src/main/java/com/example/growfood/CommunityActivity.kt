@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.growfood.adapters.ThreadAdapter
 import com.example.growfood.databinding.CommunityActivityBinding
 import com.example.growfood.models.ThreadModel
+import com.example.modul10.Helper.LoadingState
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -23,11 +24,14 @@ class CommunityActivity: AppCompatActivity() {
     private var firebaseDatabase: FirebaseDatabase? = null
     private var databaseReference: DatabaseReference? = null
     private lateinit var binding : CommunityActivityBinding
+    private lateinit var loadingState: LoadingState
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = CommunityActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        loadingState = LoadingState(this)
 
         binding.bottomNav.selectedItemId = R.id.item_forum
 
@@ -59,6 +63,8 @@ class CommunityActivity: AppCompatActivity() {
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase!!.getReference("threads")
 
+        loadingState.show()
+
         assignThreadModel()
 
         et_topic_search = findViewById(R.id.et_topic_search)
@@ -69,12 +75,24 @@ class CommunityActivity: AppCompatActivity() {
 
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        var layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.layoutManager = layoutManager
 
         floatingButton.setOnClickListener{ v ->
             val intent = Intent(this@CommunityActivity, DetailThreadActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.bottomNav.selectedItemId = R.id.item_forum
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(0, 0)
+        finish()
     }
 
     private fun assignThreadModel(){
@@ -94,6 +112,7 @@ class CommunityActivity: AppCompatActivity() {
                     val adapter = ThreadAdapter(this@CommunityActivity, threadModels)
                     recyclerView.adapter = adapter
                 }
+                loadingState.dismiss()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
